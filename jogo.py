@@ -9,10 +9,15 @@ print("Você digitou: ", chute )
 
 chuteNumerico = int(chute)
 
+acertou = chuteNumerico == numerosecreto
+maior = chuteNumerico > numerosecreto
+menor = chuteNumerico < numerosecreto
+
+
 #se voce digitar qualquer numero vou verificar se acertou ou errou
 if(numerosecreto == chuteNumerico):
     print("Você acertou!")
 else:
     print("Você errou!")
-    
+
 print("Fim do jogo")

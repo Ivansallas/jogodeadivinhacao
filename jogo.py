@@ -50,4 +50,6 @@ while totaldetentativas > 0:
             print("Você errou! O seu chute foi menor que o número secreto.")
 
     totaldetentativas = totaldetentativas - 1
+    pontos_perdidos = abs(numerosecreto - chuteNumerico)
+    pontos = pontos - pontos_perdidos
 print("Fim do jogo")

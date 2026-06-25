@@ -1,3 +1,6 @@
+#Trabalho de introdução a programação
+#Parte2
+
 import random
 print("********************************")
 print("Bem vindo ao jogo de Adivinhação")

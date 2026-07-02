@@ -3,10 +3,12 @@
 
 import random
 
+# Boa vindas ao jogo de adivinhação
 print("********************************")
 print("Bem vindo ao jogo de Adivinhação")
 print("********************************")
 
+# geração de numero aleatório entre 1 e 50
 numerosecreto = random.randrange(1, 51)
 totaldetentativas = 0
 pontos = 1000
@@ -21,7 +23,6 @@ elif nivel == 2:
     totaldetentativas = 10
 elif nivel == 3:
     totaldetentativas = 5
-
 
 while totaldetentativas > 0:
     print("Você tem ", totaldetentativas, " tentativas")
@@ -42,6 +43,7 @@ while totaldetentativas > 0:
     # se voce digitar qualquer numero vou verificar se acertou ou errou
     if acertou:
         print(f"Parabéns! Você acertou! um total de {pontos} pontos")
+        break
 
     else:
         if(maior):

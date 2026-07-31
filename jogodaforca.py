@@ -7,7 +7,7 @@ palavrasecreta = "forte"
 letrasacertadas = ["_", "_", "_", "_", "_", "_"]
 
 enforcou = False
-acertou = False
+acertou = true
 
 while(not enforcou and not acertou):
     chute = input("Digite uma letra? ")

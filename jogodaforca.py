@@ -1,10 +1,20 @@
+import random
 # Jogo da forca
 print("********************************")
 print("Bem vindo ao jogo da Foca")
 print("********************************")
 
 
-palavrasecreta = "uva".upper()
+# Lendo arquivo de palavras
+arquivo = open("palavras.txt", "r")
+palavras = []
+for linha in arquivo:
+    palavras.append(linha.strip().upper())
+arquivo.close()
+
+numero = random.randrange(0, len(palavras))
+
+palavrasecreta = palavras[numero].upper()
 letrasacertadas = ["_"] * len(palavrasecreta)
 total_tentativas = len(palavrasecreta)
 

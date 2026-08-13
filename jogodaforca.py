@@ -3,6 +3,7 @@ print("********************************")
 print("Bem vindo ao jogo da Foca")
 print("********************************")
 
+
 palavrasecreta = "uva".upper()
 letrasacertadas = ["_"] * len(palavrasecreta)
 total_tentativas = len(palavrasecreta)

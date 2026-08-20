@@ -14,39 +14,39 @@ def desenhar_forca(tentativas):
 
     if tentativas == 2:
         print(" |      (_)   ")
-        print(" |      \     ")
+        print(r" |      \     ")
         print(" |            ")
         print(" |            ")
 
     if tentativas == 3:
         print(" |      (_)   ")
-        print(" |      \|    ")
+        print(r" |      \|    ")
         print(" |            ")
         print(" |            ")
 
     if tentativas == 4:
         print(" |      (_)   ")
-        print(" |      \|/   ")
+        print(r" |      \|/   ")
         print(" |            ")
         print(" |            ")
 
     if tentativas == 5:
         print(" |      (_)   ")
-        print(" |      \|/   ")
+        print(r" |      \|/   ")
         print(" |       |    ")
         print(" |            ")
 
     if tentativas == 6:
         print(" |      (_)   ")
-        print(" |      \|/   ")
+        print(r" |      \|/   ")
         print(" |       |    ")
-        print(" |      /     ")
+        print(r" |      /     ")
 
     if tentativas == 7:
         print(" |      (_)   ")
-        print(" |      \|/   ")
+        print(r" |      \|/   ")
         print(" |       |    ")
-        print(" |      / \   ")
+        print(r" |      / \   ")
 
     print(" |            ")
     print("_|___         ")
@@ -56,21 +56,21 @@ def mensagem_perdedor(palavra_secreta):
     print("Puxa, você foi enforcado!")
     print("A palavra era {}".format(palavra_secreta))
     print("    _______________         ")
-    print("   /               \       ")
-    print("  /                 \      ")
-    print("//                   \/\  ")
-    print("\|   XXXX     XXXX   | /   ")
+    print(r"   /               \       ")
+    print(r"  /                 \      ")
+    print(r"//                   \/\  ")
+    print(r"\|   XXXX     XXXX   | /   ")
     print(" |   XXXX     XXXX   |/     ")
     print(" |   XXX       XXX   |      ")
-    print(" |                   |      ")
-    print(" \__      XXX      __/     ")
-    print("   |\     XXX     /|       ")
+    print(r" |                   |      ")
+    print(r" \__      XXX      __/     ")
+    print(r"   |\     XXX     /|       ")
     print("   | |           | |        ")
     print("   | I I I I I I I |        ")
     print("   |  I I I I I I  |        ")
-    print("   \_             _/       ")
-    print("     \_         _/         ")
-    print("       \_______/           ")
+    print(r"   \_             _/       ")
+    print(r"     \_         _/         ")
+    print(r"       \_______/           ")
 
 
 def mensagem_vencedor():

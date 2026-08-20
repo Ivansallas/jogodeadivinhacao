@@ -3,55 +3,71 @@
 
 import random
 
-# Boa vindas ao jogo de adivinhação
-print("********************************")
-print("Bem vindo ao jogo de Adivinhação")
-print("********************************")
+from menujogo import escolherjogo
 
-# geração de numero aleatório entre 1 e 50
-numerosecreto = random.randrange(1, 51)
-totaldetentativas = 0
-pontos = 1000
 
-print("Qual nível de dificuldade você deseja?")
-print("(1) Fácil (2) Médio (3) Difícil")
-nivel = int(input("Defina o nível: "))
+def jogar():
 
-if nivel == 1:
-    totaldetentativas = 20
-elif nivel == 2:
-    totaldetentativas = 10
-elif nivel == 3:
-    totaldetentativas = 5
+    # Boa vindas ao jogo de adivinhação
+    print("********************************")
+    print("Bem vindo ao jogo de Adivinhação")
+    print("********************************")
 
-while totaldetentativas > 0:
-    print("Você tem ", totaldetentativas, " tentativas")
+    # geração de numero aleatório entre 1 e 50
+    numerosecreto = random.randrange(1, 51)
+    totaldetentativas = 0
+    pontos = 1000
 
-    chute = input("Digite o seu número: ")
-    print("Você digitou: ", chute)
+    print("Qual nível de dificuldade você deseja?")
+    print("(1) Fácil (2) Médio (3) Difícil (4) Sair")
+    nivel = int(input("Defina o nível: "))
 
-    chuteNumerico = int(chute)
+    if nivel == 1:
+        totaldetentativas = 20
+    elif nivel == 2:
+        totaldetentativas = 10
+    elif nivel == 3:
+        totaldetentativas = 5
+    elif nivel == 4:
+        escolherjogo()
 
-    if totaldetentativas == 0:
-        print("Você não tem mais tentativas. Fim do jogo.")
-        break
+    while totaldetentativas > 0:
+        print("Você tem ", totaldetentativas, " tentativas")
 
-    acertou = chuteNumerico == numerosecreto
-    maior = chuteNumerico > numerosecreto
-    menor = chuteNumerico < numerosecreto
+        try:
+            chute = input("Digite o seu número: ")
+        except EOFError:
+            print("Entrada encerrada. Fim do jogo.")
+            break
 
-    # se voce digitar qualquer numero vou verificar se acertou ou errou
-    if acertou:
-        print(f"Parabéns! Você acertou! um total de {pontos} pontos")
-        break
+        print("Você digitou: ", chute)
 
-    else:
-        if(maior):
-            print("Você errou! O seu chute foi maior que o número secreto.")
-        elif(menor):
-            print("Você errou! O seu chute foi menor que o número secreto.")
+        chuteNumerico = int(chute)
 
-    totaldetentativas = totaldetentativas - 1
-    pontos_perdidos = abs(numerosecreto - chuteNumerico)
-    pontos = pontos - pontos_perdidos
-print("Fim do jogo")
+        if totaldetentativas == 0:
+            print("Você não tem mais tentativas. Fim do jogo.")
+            escolherjogo()
+
+        acertou = chuteNumerico == numerosecreto
+        maior = chuteNumerico > numerosecreto
+        menor = chuteNumerico < numerosecreto
+
+        # se voce digitar qualquer numero vou verificar se acertou ou errou
+        if acertou:
+            print(f"Parabéns! Você acertou! um total de {pontos} pontos")
+            break
+
+        else:
+            if maior:
+                print("Você errou! O seu chute foi maior que o número secreto.")
+            elif menor:
+                print("Você errou! O seu chute foi menor que o número secreto.")
+
+        totaldetentativas = totaldetentativas - 1
+        pontos_perdidos = abs(numerosecreto - chuteNumerico)
+        pontos = pontos - pontos_perdidos
+    print("Fim do jogo")
+
+
+if __name__ == "__main__":
+    jogar()

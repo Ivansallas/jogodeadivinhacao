@@ -1,5 +1,6 @@
 import random
 from desenhojogo import desenhar_forca, mensagem_vencedor, mensagem_perdedor
+from menujogo import escolherjogo
 
 def jogar():
     # Jogo da forca
@@ -28,7 +29,7 @@ def jogar():
     print("A palavra secreta tem {} letras".format(len(palavrasecreta)))
     print(letrasacertadas)
     desenhar_forca(tentativas)
-    
+
     # Loop principal do jogo
     while(not enforcou and not acertou and tentativas < total_tentativas):
         chute = input("Digite uma letra? ")
@@ -55,7 +56,8 @@ def jogar():
             mensagem_vencedor()
         elif enforcou:
             mensagem_perdedor(palavrasecreta)
+            escolherjogo()
 
-    print("Fim do jogo")
+    print("Fim do jogo>>>>>>>>>>")
 if __name__ == "__main__":
     jogar()
